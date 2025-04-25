@@ -1,0 +1,23 @@
+package org.example2.arrayProgram;
+
+public class SecondGreatestElement {
+
+    public static void main(String[] args) {
+
+        int arr[] = {7,5,6,2,3};
+        int secondGreatest = Integer.MIN_VALUE;
+        int greatest = Integer.MIN_VALUE;
+        for(int i=0; i<arr.length; i++){
+             if(arr[i]>greatest){
+                 secondGreatest=greatest;
+                    greatest=arr[i];
+             }
+            if(arr[i]>secondGreatest && arr[i]<greatest){
+                secondGreatest=arr[i];
+            }
+
+        }
+        System.out.println("2nd Greatest:" + secondGreatest);
+    }
+
+}
