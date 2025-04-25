@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+
+        int arr[] = {7,5,6,2,3};
+        //min=2
+        //secondmin=3
+        //7, min=7, second min=min
+        //5, min=5, second min = 7
+        //6, min=
+        int secondMin = Integer.MAX_VALUE;
+        int Min = Integer.MAX_VALUE;
+        for(int i=0; i<arr.length; i++){
+             if(arr[i]<Min){
+                 secondMin=Min;
+                 Min=arr[i];
+
+             }
+            if(arr[i]<secondMin && arr[i]>Min){
+                secondMin=arr[i];
+            }
+
+        }
+        System.out.println("2nd Greatest:" + secondMin);
+    }
+
+}
