@@ -1,7 +1,12 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) 
     {
-        int[] arr = new int[2];
+       //step 1: create a hashmap and fill the values key as value of arr and value as indexof array.
+//Step 2 : we will assume nums[i] as first element and then second element = target= firstelement
+// we will search the secondelement as key in hashmap.
+// we will add one more condition that index of elements should not be same[ if input arr is 3,2,4 and target value is 6 thn we might tend to get 3,3 as output ]
+// once we get the key of second element, we will store the index of second element and index of first element into result arr
+        int[] result = new int[2];
 		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
 		for(int i=0; i<nums.length; i++)
 		{
@@ -15,14 +20,14 @@ class Solution {
 			  
 			  if(hm.containsKey(secondelement) && i!=hm.get(secondelement)){
 			       
-				   arr[0]=i;
-				   arr[1]=hm.get(secondelement);
-				   return arr;
+				   result[0]=i;
+				   result[1]=hm.get(secondelement);
+				   return result;
 			  
 			  }
           
         }
-    return arr;
+    return result;
     }
 
 }
