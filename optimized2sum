@@ -1,0 +1,28 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) 
+    {
+        int[] arr = new int[2];
+		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+		for(int i=0; i<nums.length; i++)
+		{
+		hm.put(nums[i],i);
+		}
+        for(int i=0; i<nums.length; i++)
+        {
+
+              int firstelement = nums[i];
+			  int secondelement = target-firstelement;
+			  
+			  if(hm.containsKey(secondelement) && i!=hm.get(secondelement)){
+			       
+				   arr[0]=i;
+				   arr[1]=hm.get(secondelement);
+				   return arr;
+			  
+			  }
+          
+        }
+    return arr;
+    }
+
+}
